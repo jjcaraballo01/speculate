@@ -14,7 +14,7 @@ const isValid = validator(cwd);
 
 if (!isValid) {
   // eslint-disable-next-line no-console
-  console.error('Please run speculate from within a valid Node.js project');
+  console.error('Please run afsi-speculate from within a valid Node.js project');
   process.exit(1);
 }
 

@@ -1,7 +1,7 @@
 {
-  "name": "speculate",
-  "version": "2.0.0-alpha.4",
-  "description": "Automatically generates an RPM Spec file for your Node.js project",
+  "name": "afsi-speculate",
+  "version": "1.0.2",
+  "description": "Automagically generates an RPM Spec file for your Node.js project.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -20,7 +20,7 @@
     "node",
     "generate"
   ],
-  "author": "julian.caraballo@amtruustgroup.com",
+  "author": "Julian Caraballo <julian.caraballo@amtruustgroup.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/jjcaraballo01/speculate/issues"
