@@ -31,17 +31,17 @@ getent group my-super-long-long-long-long-cat >/dev/null || groupadd -r my-super
 getent passwd my-super-long-long-long-long-cat >/dev/null || useradd -r -g my-super-long-long-long-long-cat -G my-super-long-long-long-long-cat -d / -s /sbin/nologin -c "my-super-long-long-long-long-cat" my-super-long-long-long-long-cat
 
 %install
-mkdir -p %{buildroot}/usr/lib/my-super-long-long-long-long-cat-api
-cp -r ./ %{buildroot}/usr/lib/my-super-long-long-long-long-cat-api
+mkdir -p %{buildroot}/etc/systemd/system/my-super-long-long-long-long-cat-api
+cp -r ./ %{buildroot}/etc/systemd/system/my-super-long-long-long-long-cat-api
 mkdir -p %{buildroot}/var/log/my-super-long-long-long-long-cat-api
 
 %post
-systemctl enable /usr/lib/my-super-long-long-long-long-cat-api/my-super-long-long-long-long-cat-api.service
+systemctl enable /etc/systemd/system/my-super-long-long-long-long-cat-api/my-super-long-long-long-long-cat-api.service
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(644, my-super-long-long-long-long-cat, my-super-long-long-long-long-cat, 755)
-/usr/lib/my-super-long-long-long-long-cat-api
+/etc/systemd/system/my-super-long-long-long-long-cat-api
 /var/log/my-super-long-long-long-long-cat-api

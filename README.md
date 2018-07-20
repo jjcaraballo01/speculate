@@ -196,7 +196,7 @@ Speculate creates the following directories for your application:
 
 |Directory|Purpose|
 |---------|-------|
-|`/usr/lib/:projectName`|This is where your application is stored|
+|`/etc/systemd/system//:projectName`|This is where your application is stored|
 |`/var/log/:projectName`|This is created for any log files that your application needs to write to|
 
 ## Configuration

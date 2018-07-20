@@ -39,12 +39,12 @@ getent group {{username}} >/dev/null || groupadd -r {{username}}
 getent passwd {{username}} >/dev/null || useradd -r -g {{username}} -G {{username}} -d / -s /sbin/nologin -c "{{username}}" {{username}}
 
 %install
-mkdir -p %{buildroot}/usr/lib/{{name}}
-cp -r ./ %{buildroot}/usr/lib/{{name}}
+mkdir -p %{buildroot}/etc/systemd/system/{{name}}
+cp -r ./ %{buildroot}/etc/systemd/system/{{name}}
 mkdir -p %{buildroot}/var/log/{{name}}
 
 %post
-systemctl enable /usr/lib/{{name}}/{{name}}.service
+systemctl enable /etc/systemd/system/{{name}}/{{name}}.service
 {{#postInstallCommands}}
 {{{.}}}
 {{/postInstallCommands}}
@@ -54,7 +54,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(644, {{username}}, {{username}}, 755)
-/usr/lib/{{name}}
+/etc/systemd/system/{{name}}
 /var/log/{{name}}
 {{#hasExecutableFiles}}
 {{#executableFiles}}

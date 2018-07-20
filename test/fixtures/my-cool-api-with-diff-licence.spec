@@ -33,17 +33,17 @@ getent group my-cool-api >/dev/null || groupadd -r my-cool-api
 getent passwd my-cool-api >/dev/null || useradd -r -g my-cool-api -G my-cool-api -d / -s /sbin/nologin -c "my-cool-api" my-cool-api
 
 %install
-mkdir -p %{buildroot}/usr/lib/my-cool-api
-cp -r ./ %{buildroot}/usr/lib/my-cool-api
+mkdir -p %{buildroot}/etc/systemd/system/my-cool-api
+cp -r ./ %{buildroot}/etc/systemd/system/my-cool-api
 mkdir -p %{buildroot}/var/log/my-cool-api
 
 %post
-systemctl enable /usr/lib/my-cool-api/my-cool-api.service
+systemctl enable /etc/systemd/system/my-cool-api/my-cool-api.service
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(644, my-cool-api, my-cool-api, 755)
-/usr/lib/my-cool-api
+/etc/systemd/system/my-cool-api
 /var/log/my-cool-api
