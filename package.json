@@ -1,6 +1,6 @@
 {
   "name": "afsi-speculate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automagically generates an RPM Spec file for your Node.js project.",
   "main": "index.js",
   "scripts": {
